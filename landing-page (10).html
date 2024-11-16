@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הבוטים החכמים שישנו את החיים שלכם</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
+        
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-right: 10px;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .ai-badge::before {
+            content: "⚡";
+            margin-left: 6px;
+            font-size: 1rem;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(79, 172, 254, 0.5); }
+            100% { box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3); }
+        }
+        
+        :root {
+            --gradient-1: linear-gradient(135deg, #2c3e50, #3498db);
+            --gradient-2: linear-gradient(135deg, #2ecc71, #27ae60);
+            --gradient-3: linear-gradient(135deg, #e74c3c, #c0392b);
+            --gradient-4: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+
+        * {
+            font-family: 'Heebo', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a365d, #2c5282);
+        }
+
+        .bot-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .bot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .bot-icon {
+            font-size: 2.5rem;
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .health-bot .bot-icon { background: var(--gradient-1); }
+        .finance-bot .bot-icon { background: var(--gradient-2); }
+        .general-bot .bot-icon { background: var(--gradient-3); }
+        .custom-bot .bot-icon { background: var(--gradient-4); }
+
+        .highlight-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .bot-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .bot-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-right: 1.5rem;
+            margin-bottom: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .floating-animation {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold text-center mb-6">הבוטים החכמים שישנו את החיים שלכם</h1>
+            <div class="text-center mb-12">
+                <p class="text-xl text-gray-300 mb-4">פתרונות חכמים מותאמים אישית - בלחיצת כפתור</p>
+                <span class="ai-badge">AI Powered</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 -mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- בוט בריאות -->
+            <div class="bot-card rounded-2xl p-8 relative">
+                <div class="bot-icon text-white floating-animation">
+                    🏥
+                </div>
+                <h2 class="text-2xl font-bold text-center mb-6">בוט בריאות</h2>
+                <ul class="feature-list mb-8">
+                    <li>מידע על תזונה ופעילות גופנית</li>
+                    <li>נתונים רפואיים מבוססי מחקר</li>
+                    <li>סטטיסטיקות בריאות עדכניות</li>
+                    <li>מאגר מידע רפואי נרחב</li>
+                </ul>
+                <div class="text-center">
+                    <a href="https://api.whatsapp.com/send?phone=972549662316&text=%D7%90%D7%94%D7%9C%D7%9F,%20%D7%9E%D7%94%20%D7%A2%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D?" class="bot-button">התחל צ'אט</a>
+                </div>
+            </div>
+
+            <!-- בוט כלכלי -->
+            <div class="bot-card rounded-2xl p-8 relative">
+                <div class="bot-icon text-white floating-animation">
+                    💰
+                </div>
+                <h2 class="text-2xl font-bold text-center mb-6">בוט כלכלי</h2>
+                <ul class="feature-list mb-8">
+                    <li>דוחות מגמות שוק בזמן אמת</li>
+                    <li>נתוני מסחר היסטוריים</li>
+                    <li>אינדיקטורים כלכליים</li>
+                    <li>מעקב אחר שערי מטבעות</li>
+                </ul>
+                <div class="text-center">
+                    <a href="https://api.whatsapp.com/send?phone=972549669657&text=%D7%90%D7%94%D7%9C%D7%9F,%20%D7%9E%D7%94%20%D7%A2%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D?" class="bot-button">פתח צ'אט</a>
+                </div>
+            </div>
+
+            <!-- בוט רב-תחומי -->
+            <div class="bot-card rounded-2xl p-8 relative">
+                <div class="bot-icon text-white floating-animation">
+                    🌟
+                </div>
+                <h2 class="text-2xl font-bold text-center mb-6">בוט רב-תחומי</h2>
+                <ul class="feature-list mb-8">
+                    <li>מענה מקצועי בכל תחום</li>
+                    <li>התאמה אישית לצרכים שלך</li>
+                    <li>זמין 24/7</li>
+                    <li>מתעדכן באופן שוטף</li>
+                </ul>
+                <div class="text-center">
+                    <a href="https://api.whatsapp.com/send?phone=972548200850&text=%D7%90%D7%94%D7%9C%D7%9F,%20%D7%9E%D7%94%20%D7%A2%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D?" class="bot-button">צ'אט חכם</a>
+                </div>
+            </div>
+
+            <!-- בוט בהתאמה אישית -->
+            <div class="bot-card rounded-2xl p-8 relative">
+                <div class="highlight-badge">חדש!</div>
+                <div class="bot-icon text-white floating-animation">
+                    🎯
+                </div>
+                <h2 class="text-2xl font-bold text-center mb-6">בוט בהתאמה אישית</h2>
+                <ul class="feature-list mb-8">
+                    <li>אפיון מדויק לפי דרישותיך</li>
+                    <li>פתרון ייחודי לעסק שלך</li>
+                    <li>שילוב מערכות קיימות</li>
+                    <li>התפתחות מתמדת לפי הצרכים</li>
+                </ul>
+                <div class="text-center">
+                    <a href="https://api.whatsapp.com/send?phone=972512110384&text=%D7%90%D7%94%D7%9C%D7%9F,%20%D7%9E%D7%94%20%D7%A2%D7%A0%D7%99%D7%99%D7%A0%D7%99%D7%9D?" class="bot-button">צור צ'אט מותאם</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
